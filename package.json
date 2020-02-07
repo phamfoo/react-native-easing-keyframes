@@ -1,7 +1,7 @@
 {
   "name": "react-native-easing-keyframes",
   "description": "Create CSS keyframe-based animations in React Native",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "lib/commonjs/index.js",
   "author": "Tien Pham",
   "license": "MIT",
