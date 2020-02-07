@@ -23,6 +23,18 @@
       "pre-commit": "lint-staged"
     }
   },
+  "keywords": [
+    "react",
+    "react-native",
+    "animations",
+    "keyframes",
+    "easing",
+    "css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tienph6m/react-native-easing-keyframes.git"
+  },
   "devDependencies": {
     "@react-native-community/bob": "^0.7.0",
     "@types/react": "^16.9.16",
