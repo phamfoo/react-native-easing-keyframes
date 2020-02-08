@@ -19,7 +19,7 @@ npm install react-native-easing-keyframes
 Usually in [timing](https://facebook.github.io/react-native/docs/animated#timing) animations, the easing function is applied to the entire duration of the animation. With the `keyframes` helper from this library, you can control what easing function to use in each keyframe during the animation.
 
 ```js
-import keyframe from 'react-native-easing-keyframes'
+import keyframes from 'react-native-easing-keyframes'
 
 const easeInOut = Easing.bezier(0.42, 0.0, 0.58, 1.0)
 
