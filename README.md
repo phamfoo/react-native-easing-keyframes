@@ -34,7 +34,7 @@ Animated.timing(value, {
 
 In the example above, `keyframes` will apply the easing function you want to use (`easeInOut`) to each keyframe, so `easeInOut` will be applied twice, from 0 to 50 and from 50 to 100.
 
-You can also target a specific keyframes and apply a different easing function to it.
+You can also target a specific keyframe and apply a different easing function to it.
 
 ```js
 Animated.timing(value, {
@@ -43,7 +43,7 @@ Animated.timing(value, {
   easing: keyframes({
     easing: easeInOut,
     keyframes: [0, 50, 100],
-    easingByKeyframe: { 50: Easing.linear },
+    easingsByKeyframe: { 50: Easing.linear },
   }),
   useNativeDriver: true,
 })
@@ -69,13 +69,13 @@ And array of keyframes used in the animation.
 
 This array must have at least 3 items. If you're animating from `0` to `100` then the first one should be `0` and the last one should be `100`.
 
-#### easing?
+#### easing
 
 > `(value: number) => number` | default to Easing.inOut(Easing.ease)
 
 The default easing function that will be used in all keyframes.
 
-#### easingsByKeyframe?
+#### easingsByKeyframe
 
 > `{ [key: number]: EasingFunction }` | defaults to {}
 
