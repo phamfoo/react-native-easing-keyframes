@@ -14,23 +14,34 @@ export default function keyframes({
   validateKeyframes(keyframes)
 
   return (t: number) => {
-    const lastKeyframe = keyframes[keyframes.length - 1]
     for (
-      let keyframeIndex = 1;
-      keyframeIndex < keyframes.length;
+      let keyframeIndex = 0;
+      keyframeIndex < keyframes.length - 1;
       keyframeIndex++
     ) {
-      if (t < keyframes[keyframeIndex] / lastKeyframe) {
-        const prev = keyframes[keyframeIndex - 1] / lastKeyframe
-        const current =
-          (keyframes[keyframeIndex] - keyframes[keyframeIndex - 1]) /
-          lastKeyframe
-        const currentEasing =
-          easingsByKeyframe[keyframes[keyframeIndex - 1]] || easing
+      const currentStepEndTime =
+        (keyframes[keyframeIndex + 1] - keyframes[0]) /
+        (keyframes[keyframes.length - 1] - keyframes[0])
 
-        return prev + currentEasing((t - prev) / current) * current
+      if (t < currentStepEndTime) {
+        const currentStepStartTime =
+          (keyframes[keyframeIndex] - keyframes[0]) /
+          (keyframes[keyframes.length - 1] - keyframes[0])
+
+        const currentStepDuration = currentStepEndTime - currentStepStartTime
+        const currentRelativeRatio =
+          (t - currentStepStartTime) / currentStepDuration
+
+        const currentEasing =
+          easingsByKeyframe[keyframes[keyframeIndex]] ?? easing
+
+        return (
+          currentStepStartTime +
+          currentEasing(currentRelativeRatio) * currentStepDuration
+        )
       }
     }
+
     return t
   }
 }
