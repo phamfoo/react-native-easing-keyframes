@@ -1,5 +1,7 @@
 # React Native Easing Keyframes
 
+[![Stable Release](https://img.shields.io/npm/v/react-native-easing-keyframes.svg)](https://npm.im/react-native-easing-keyframes) [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
+
 Create CSS keyframe-based animations in React Native
 
 ## Installation
